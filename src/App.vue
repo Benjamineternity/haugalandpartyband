@@ -1,7 +1,7 @@
 <template>
     <div class="bg-default ">
         <div class="bg-images">
-            <img :src="theCompImage" loading="eager" />
+            <img :src="theCompImage" loading="eager" class="image" />
         </div>
         <nav class="navbar gap-3 nav-default justify-content-start fs-5 c-default">
             <div class="nav-item" style="margin-left: 10%">
@@ -145,7 +145,6 @@
 
     .nav-default {
         height: 7%;
-        /* border-bottom: 1px solid #101117; */
         --bs-bg-opacity: 0.5;
         background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
     }
@@ -159,13 +158,23 @@
         right: 0;
         top: 0;
         bottom: 0;
+        overflow: hidden;
 
         z-index: 0;
-        opacity: 0.1;
+        opacity: 0.5;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        transition: opacity 3s ease-in-out;
+    }
+
+    .image {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
-        position: fixed;
-        transition: opacity 1s ease-in-out;
+        object-fit: cover;
+        object-position: center;
     }
 
 </style>
