@@ -85,11 +85,11 @@
 
     onMounted(() => {
         nextNumber();
-        startImg(); // @mouseleave="startImg"
+        startImg();
     });
 
     onBeforeUnmount(() => {
-        pauseImg(); // @mouseenter="pauseImg"
+        pauseImg();
     })
 
     window.onload = () => {
@@ -106,7 +106,7 @@
 
     const startImg = () => {
         if (intervalId) return
-        intervalId = window.setInterval(nextNumber, 7000)
+        intervalId = window.setInterval(nextNumber, 8000)
     }
 
     const pauseImg = () => {
