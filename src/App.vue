@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-default "> <!--w-100 h-100-->
+    <div class="bg-default ">
         <div class="bg-images">
             <img :src="theCompImage" loading="eager" />
         </div>
@@ -29,9 +29,9 @@
                     <span class="c-default">Kalender</span>
                 </button>
             </div>
-            <div class="nav-item ms-auto me-3">
+            <!-- <div class="nav-item ms-auto me-3">
                 <span>Anno 2020</span>
-            </div>
+            </div> -->
         </nav>
     
         <div class="w-50 mx-auto">
@@ -54,11 +54,7 @@
     
             <Panel :title="'Footer'">
                 og enda mer her kanskje? <br>
-                hehehe
-                <!-- footer with contact info / social media links <br />
-                copyright info ?? <br />
-                developer credit ?? <br />
-                thanks to .... <br /> -->
+                <!-- footer with contact info / social media links <br /> -->
             </Panel>
         </div>
         <Footer />
@@ -125,7 +121,7 @@
         if (!e) { window.location.reload(); }
 
         switch (e) {
-            case 1: window.location.href = "/haugalandpartyband/home"; break;
+            case 1: window.location.href = "/haugalandpartyband/"; break;
             case 2: window.location.href = "/haugalandpartyband/galleri"; break;
             case 3: window.location.href = "/haugalandpartyband/anmeldelser"; break;
             case 4: window.location.href = "/haugalandpartyband/kontakt"; break;
@@ -138,7 +134,7 @@
 
 </script>
 
-<style>
+<style scoped>
     .bg-default {
         background-color: #1c1a16;
     }
@@ -148,10 +144,10 @@
     }
 
     .nav-default {
-        background-color: #16181f;
-        border-bottom: 1px solid #101117;
-        border-radius: 2px;
         height: 7%;
+        /* border-bottom: 1px solid #101117; */
+        --bs-bg-opacity: 0.5;
+        background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
     }
 
     .clickable {
