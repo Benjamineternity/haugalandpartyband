@@ -1,7 +1,7 @@
 <template>
     <div class="bg-default "> <!--w-100 h-100-->
         <div class="bg-images">
-            <img :src="galleryImages[imgIndex]" loading="eager" />
+            <img :src="theCompImage" loading="eager" />
         </div>
         <nav class="navbar gap-3 nav-default justify-content-start fs-5 c-default">
             <div class="nav-item" style="margin-left: 10%">
@@ -66,7 +66,7 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, onMounted, onBeforeUnmount } from 'vue';
+    import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 
     import Panel from './components/Panel.vue';
     import Footer from './components/Footer.vue';
@@ -82,6 +82,11 @@
 
     const imgIndex = ref(0);
     const url = ref(window.location.search);
+
+    const theCompImage = computed(() => {
+        const imgString: any | String = galleryImages.value[imgIndex.value];
+        return imgString;
+    });
 
     onMounted(() => {
         nextNumber();
