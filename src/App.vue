@@ -38,9 +38,9 @@
                 Band member bios / pictures <br />
                 Music samples / videos <br />
                 Testimonials / reviews <br /> -->
-                would be nice if we wrote something here as<br>
+                <!-- would be nice if we wrote something here as<br>
                 kanskje noe på engelsk <br>
-                kanskje noe på norsk
+                kanskje noe på norsk -->
             </Panel>
         </div>
 
