@@ -1,5 +1,5 @@
 <template>
-    <div class="position-absolute bottom-0 w-100">
+    <div class="position-absolute bottom-0 w-100" style="max-height: 30%">
         <footer class="footer-default c-default">
             <div class="row ms-5 me-3">
 
