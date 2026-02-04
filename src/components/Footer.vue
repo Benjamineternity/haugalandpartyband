@@ -1,7 +1,7 @@
 <template>
-    <div class="position-absolute bottom-0 w-100" style="max-height: 30%; bottom: 0;">
+    <div class="position-absolute bottom-0 w-100" style="max-height: 30%;">
         <footer class="footer-default c-default">
-            <div class="row ms-5 me-3">
+            <div class="row ms-5 me-3 footer-rows">
 
                 <div class="col-12 col-md-3 mb-3 mt-3" title="Band Members">
                     <p class="pb-1 d-block small-text-header">Medlemmer</p>
@@ -97,6 +97,19 @@
     .small-text-header {
         font-size: 0.8rem;
         font-weight: bold;
+    }
+
+    @media screen and (max-width: 800px) {
+        .footer-default {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-rows {
+            flex: 1;
+            flex-direction: column;
+        }
     }
 
 </style>
