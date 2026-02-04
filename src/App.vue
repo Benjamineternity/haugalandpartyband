@@ -20,6 +20,7 @@
     import NavBar from './components/NavBar.vue';
 
     const compUrl = computed<string | undefined>(() => {
+        console.log(window.location.href.split('.no')[1])
         return window.location.href.split('.no')[1] ? window.location.href.split('.no')[1] : '';
     });
 
