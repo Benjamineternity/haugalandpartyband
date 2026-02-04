@@ -27,11 +27,11 @@
 
     function goTo(e: number | null) {
         switch (e) {
-            case 1: window.location.href = "/haugalandpartyband/"; break;
-            case 2: window.location.href = "/haugalandpartyband/galleri"; break;
-            case 3: window.location.href = "/haugalandpartyband/anmeldelser"; break;
-            case 4: window.location.href = "/haugalandpartyband/kontakt"; break;
-            case 5: window.location.href = "/haugalandpartyband/kalender"; break;
+            case 1: window.location.href = "/hjem"; break;
+            case 2: window.location.href = "/galleri"; break;
+            case 3: window.location.href = "/anmeldelser"; break;
+            case 4: window.location.href = "/kontakt"; break;
+            case 5: window.location.href = "/kalender"; break;
             default: return;
         }
     }
