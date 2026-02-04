@@ -51,7 +51,6 @@
     </div>
 </template>
 
-
 <script setup lang="ts">
     const copyPhone = (e: MouseEvent) => {;
         const target = e.target as HTMLElement;
