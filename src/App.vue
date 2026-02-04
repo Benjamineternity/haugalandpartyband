@@ -1,6 +1,6 @@
 <template>
     <NavBar />
-    <Hjem v-if="compUrl === 'hjem' || compUrl === '' || !compUrl" />
+    <Hjem /> <!--v-if="compUrl === 'hjem' || compUrl === '' || !compUrl"-->
 
     <Galleri v-if="compUrl === 'galleri'" />
     <Kalender v-if="compUrl == 'kalender'" />
@@ -32,7 +32,7 @@
     }
 
     .c-default {
-        color: #F2EFEA;
+        color: rgb(242, 239, 234);
     }
 
 </style>

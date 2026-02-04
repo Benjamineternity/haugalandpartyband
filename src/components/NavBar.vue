@@ -27,12 +27,12 @@
 
     function goTo(e: number | null) {
         switch (e) {
-            case 1: window.location.href = "/hjem"; break;
-            case 2: window.location.href = "/galleri"; break;
-            case 3: window.location.href = "/anmeldelser"; break;
-            case 4: window.location.href = "/kontakt"; break;
-            case 5: window.location.href = "/kalender"; break;
-            default: return;
+            // case 1: window.location.href = "/hjem"; break;
+            // case 2: window.location.href = "/galleri"; break;
+            // case 3: window.location.href = "/anmeldelser"; break;
+            // case 4: window.location.href = "/kontakt"; break;
+            // case 5: window.location.href = "/kalender"; break;
+            // default: return;
         }
     }
 </script>
@@ -46,7 +46,7 @@
     }
 
     .c-default {
-        color: #F2EFEA;
+        color: rgb(242, 239, 234);
     }
 
 </style>
