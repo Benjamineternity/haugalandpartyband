@@ -1,21 +1,21 @@
 <template>
     <nav class="navbar gap-3 nav-default justify-content-start fs-5 c-default">
-        <div class="nav-item" style="margin-left: 10%" title="Haugaland Party Band">
+        <div class="nav-item" style="margin-left: 10%; overflow: hidden;" title="Haugaland Party Band">
             <button class="btn btn-sm fs-5" @click="goTo(1)">
                 <span class="c-default">Haugaland Party Band</span>
             </button>
         </div>
-        <div class="nav-item" title="Galleri">
+        <div class="nav-item" title="Galleri" style="overflow: hidden;">
             <button class="btn btn-sm fs-5 c-default" @click="goTo(2)">
                 <span class="c-default">Galleri</span>
             </button>
         </div>
-        <div class="nav-item" title="Anmeldelser">
+        <div class="nav-item" title="Anmeldelser" style="overflow: hidden;">
             <button class="btn btn-sm fs-5 c-default" @click="goTo(3)">
                 <span class="c-default">Anmeldelser</span>
             </button>
         </div>
-        <div class="nav-item" title="Kalender">
+        <div class="nav-item" title="Kalender" style="overflow: hidden;">
             <button class="btn btn-sm fs-5 c-default" @click="goTo(4)">
                 <span class="c-default">Kalender</span>
             </button>
@@ -41,6 +41,7 @@
 
 <style scoped>
     .nav-default {
+        overflow: hidden;
         height: 7%;
         --bs-bg-opacity: 0.5;
         background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
@@ -49,6 +50,20 @@
 
     .c-default {
         color: rgb(242, 239, 234);
+    }
+
+    @media screen and (max-width: 800px) {
+        .nav-default {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .nav-item {
+            max-width: 25%;
+            padding: 0;
+        }
     }
 
 </style>
