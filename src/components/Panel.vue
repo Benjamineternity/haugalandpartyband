@@ -1,5 +1,5 @@
 <template>
-    <div class="w-100 h-100 c-default" style="padding: 1rem" :title="props.text"> <!-- panel background and padding -->
+    <div class="c-default panel-default" style="padding: 1rem" :title="props.text">
         <slot />
     </div>
 </template>
@@ -15,3 +15,23 @@
     });
 
 </script>
+
+<style scoped>
+
+    .panel-default {
+        width: 100%;
+        height: 100%;
+        --bs-bg-opacity: 0.5;
+        background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
+        z-index: 999;
+    }
+    
+    .bg-default {
+        background-color: rgba(22, 24, 31);
+    }
+
+    .c-default {
+        background-color: rgb(242, 239, 234);
+    }
+
+</style>
