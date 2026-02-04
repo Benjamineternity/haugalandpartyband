@@ -53,8 +53,6 @@
 
 
 <script setup lang="ts">
-    import { ref } from 'vue';
-
     const copyPhone = (e: MouseEvent) => {;
         const target = e.target as HTMLElement;
         const innerText : string = target.innerText;
@@ -78,7 +76,6 @@
         }
     }
 
-
 </script>
 
 <style scoped>
@@ -87,10 +84,11 @@
         height: 100%;
         --bs-bg-opacity: 0.5;
         background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
+        z-index: 999;
     }
 
     .c-default {
-        color: #F2EFEA;
+        color: rgb(242, 239, 234);
     }
 
     .small-text {
@@ -102,8 +100,4 @@
         font-weight: bold;
     }
 
-    .custom-tooltip {
-        --bs-tooltip-bg: #FFFFFF;
-        --bs-tooltip-color: #F2EFEA;
-    }
 </style>

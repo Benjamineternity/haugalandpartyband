@@ -1,10 +1,8 @@
 <template>
     <ImageBackground />
-    <div class="w-50 mx-auto" style="position: relative;">
-        <Panel :title="'Sales pitch'">
-            Sales Pitch
-        </Panel>>
-    </div>
+    <Panel :title="'Sales pitch'">
+        
+    </Panel>
     <Footer />
 </template>
 

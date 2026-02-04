@@ -13,7 +13,7 @@
         { eager: true, import: 'default' }
     );
 
-    // types ??
+    // types => its just a type of object predefined i guess
     type ImageSlot = {
         source: string | undefined,
         active: boolean
@@ -75,6 +75,7 @@
         inset: 0;
         overflow: hidden;
         pointer-events: none;
+        background-color: rgba(22, 24, 31);
     }
 
     .image {
@@ -85,7 +86,7 @@
         object-fit: cover;
         object-position: center;
         opacity: 0;
-        transition: opacity 3s ease-in-out;
+        transition: opacity 2s ease-in-out;
         will-change: opacity;
     }
 
