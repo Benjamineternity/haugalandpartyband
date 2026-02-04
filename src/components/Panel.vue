@@ -29,7 +29,7 @@
     }
 
     .c-default {
-        background-color: rgb(242, 239, 234);
+        color: rgb(242, 239, 234);
     }
 
 </style>

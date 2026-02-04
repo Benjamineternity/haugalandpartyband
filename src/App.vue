@@ -1,6 +1,6 @@
 <template>
     <NavBar />
-    <Hjem v-if="compUrl === 'hjem' || compUrl === '' || !compUrl" />
+    <Hjem /> <!--v-if="compUrl === 'hjem' || compUrl === '' || !compUrl"-->
 
     <Galleri v-if="compUrl === 'galleri'" />
     <Kalender v-if="compUrl == 'kalender'" />
@@ -20,6 +20,7 @@
     import NavBar from './components/NavBar.vue';
 
     const compUrl = computed<string | undefined>(() => {
+        console.log(window.location.href.split('.no')[1])
         return window.location.href.split('.no')[1] ? window.location.href.split('.no')[1] : '';
     });
 
@@ -31,7 +32,7 @@
     }
 
     .c-default {
-        color: #F2EFEA;
+        color: rgb(242, 239, 234);
     }
 
 </style>
