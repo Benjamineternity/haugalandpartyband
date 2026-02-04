@@ -1,79 +1,27 @@
 <template>
-    <div class="bg-default ">
-        <ImageBackground />
-        <nav class="navbar gap-3 nav-default justify-content-start fs-5 c-default">
-            <div class="nav-item" style="margin-left: 10%">
-                <button class="btn btn-sm fs-5" @click="goTo(1)">
-                    <span class="c-default">Haugaland Party Band</span>
-                </button>
-            </div>
-            <div class="nav-item">
-                <button class="btn btn-sm fs-5 c-default" @click="goTo(2)">
-                    <span class="c-default">Galleri</span>
-                </button>
-            </div>
-            <div class="nav-item">
-                <button class="btn btn-sm fs-5 c-default" @click="goTo(3)">
-                    <span class="c-default">Anmeldelser</span>
-                </button>
-            </div>
-            <div class="nav-item">
-                <button class="btn btn-sm fs-5 c-default" @click="goTo(4)">
-                    <span class="c-default">Kontakt Oss</span>
-                </button>
-            </div>
-            <div class="nav-item">
-                <button class="btn btn-sm fs-5 c-default" @click="goTo(5)">
-                    <span class="c-default">Kalender</span>
-                </button>
-            </div>
-            <!-- <div class="nav-item ms-auto me-3">
-                <span>Anno 2020</span>
-            </div> -->
-        </nav>
-    
-        <div class="w-50 mx-auto" style="position: relative;">
-            <Panel :title="'Sales pitch'">
-                <!-- Selling points / features and what to expect, basically a sales pitch<br />
-                Band member bios / pictures <br />
-                Music samples / videos <br />
-                Testimonials / reviews <br /> -->
-                <!-- would be nice if we wrote something here as<br>
-                kanskje noe på engelsk <br>
-                kanskje noe på norsk -->
-            </Panel>
-        </div>
+    <NavBar />
+    <Hjem v-if="compUrl === 'hjem' || compUrl === '/' || !compUrl" />
 
-        <Footer />
-    </div>
+    <Galleri v-if="compUrl === 'galleri'" />
+    <Kalender v-if="compUrl == 'kalender'" />
+    <Anmeldelser v-if="compUrl === 'anmeldelser'" />
+    <Kontakt v-if="compUrl === 'kontakt'" />
 </template>
 
 <script setup lang="ts">
-    import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+    import { ref, computed } from 'vue';
 
+    import Hjem from './Hjem.vue';
     import Anmeldelser from './Anmeldelser.vue';
     import Kontakt from './Kontakt.vue';
     import Kalender from './Kalender.vue';
     import Galleri from './Galleri.vue';
-    import Panel from './components/Panel.vue';
-    import Footer from './components/Footer.vue';
-    import ImageBackground from './components/ImageBackground.vue';
-    
-    const url = ref(window.location.search);
-    
-    function goTo(e: number | null) {
-        console.log(url.value)
-        if (!e) { window.location.reload(); }
 
-        switch (e) {
-            case 1: window.location.href = "/haugalandpartyband/"; break;
-            case 2: window.location.href = "/haugalandpartyband/galleri"; break;
-            case 3: window.location.href = "/haugalandpartyband/anmeldelser"; break;
-            case 4: window.location.href = "/haugalandpartyband/kontakt"; break;
-            case 5: window.location.href = "/haugalandpartyband/kalender"; break;
-            default: return;
-        }
-    }
+    import NavBar from './components/NavBar.vue';
+
+    const compUrl = computed<string | undefined>(() => {
+        return window.location.href.split('/haugalandpartyband/')[1] ? window.location.href.split('/haugalandpartyband/')[1] : '/';
+    });
 
 </script>
 
