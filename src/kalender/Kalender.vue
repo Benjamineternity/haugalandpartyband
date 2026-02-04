@@ -2,9 +2,9 @@
     <NavBar />
     <!-- <ImageBackground /> -->
     <!-- <div class="" style="bottom: 0; top: 0;">
-        <div data-provide="calendar"  class="calendar "></div>
-    </div> -->
-    <div class="calendar"></div>
+    </div>
+    <div class="calendar"></div> -->
+    <div data-provide="calendar"  class="calendar "></div>
     <Footer />
 </template>
 
@@ -21,12 +21,14 @@
     const coolCalendar = ref();
 
     onMounted(() => {
-        const number = (new Date().getFullYear() + 11).toString();
-        coolCalendar.value = new Calendar('.calendar', {
-            style: 'custom',
-            minDate: new Date('2019/01/01'),
-            maxDate: new Date(number, 0, 0)
-        });
+        new Calendar('.calendar');
+
+        // const number = (new Date().getFullYear() + 11).toString();
+        // coolCalendar.value = new Calendar('.calendar', {
+        //     style: 'custom',
+        //     minDate: new Date('2019/01/01'),
+        //     maxDate: new Date(number, 0, 0)
+        // });
     });
 
 </script>
