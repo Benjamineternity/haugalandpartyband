@@ -16,7 +16,7 @@
             </button>
         </div>
         <div class="nav-item" title="Kalender">
-            <button class="btn btn-sm fs-5 c-default" @click="goTo(5)">
+            <button class="btn btn-sm fs-5 c-default" @click="goTo(4)">
                 <span class="c-default">Kalender</span>
             </button>
         </div>
@@ -24,17 +24,19 @@
 </template>
 
 <script setup lang="ts">
+    const base = import.meta.env.BASE_URL;
 
     function goTo(e: number | null) {
         switch (e) {
-            // case 1: window.location.href = "/hjem"; break;
-            // case 2: window.location.href = "/galleri"; break;
-            // case 3: window.location.href = "/anmeldelser"; break;
-            // case 4: window.location.href = "/kontakt"; break;
-            // case 5: window.location.href = "/kalender"; break;
-            // default: return;
+            case 1: window.location.href = `${base}`; break;
+            case 2: window.location.href = `${base}galleri/`; break;
+            case 3: window.location.href = `${base}anmeldelser/`; break;
+            // case 4: window.location.href = "/kontakt/"; break; // deprecated ??
+            case 4: window.location.href = `${base}kalender/`; break;
+            default: return;
         }
     }
+
 </script>
 
 <style scoped>
