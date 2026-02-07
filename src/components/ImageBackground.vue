@@ -2,6 +2,9 @@
     <div class="bg-images">
         <img v-for="(img, idx) in twoImages" :key="idx"
             :src="img.source" loading="eager" class="image" :class="{ active: img.active }" />
+        <div class="me-auto me-2" style="position:absolute;bottom:0;right:5px;">
+            <p class="pb-0 mb-2 c-default" style="font-size:6px">Bilder av: Leif Hole</p>
+        </div>
     </div>
 </template>
 
@@ -88,6 +91,10 @@
         opacity: 0;
         transition: opacity 2s ease-in-out;
         will-change: opacity;
+    }
+
+    .c-default {
+        color: rgb(242, 239, 234);
     }
 
     .image.active {

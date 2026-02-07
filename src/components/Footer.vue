@@ -5,35 +5,35 @@
 
                 <div class="col-12 col-md-3 mb-3 mt-3" title="Band Members">
                     <p class="pb-1 d-block small-text-header">Medlemmer</p>
-                    <p class="small-text mb-1">Jon Oma Dahle</p>
-                    <p class="small-text mb-1">Aage Halleland</p>
-                    <p class="small-text mb-1">Mikkel Westye Magnerud</p>
-                    <p class="small-text mb-1">Andreas Jøsendal Helgeland</p>
-                    <p class="small-text mb-1">Benjamin Hole</p>
+                    <p class="small-text mb-1">Jon Oma Dahle 🎤</p>
+                    <p class="small-text mb-1">Aage Halleland 🥁</p>
+                    <p class="small-text mb-1">Mikkel Westye Magnerud 🎸</p>
+                    <p class="small-text mb-1">Andreas Jøsendal Helgeland 🎹</p>
+                    <p class="small-text mb-1">Benjamin Hole 🎸</p>
                 </div>
 
                 <div class="col-12 col-md-3 mb-3 mt-3" title="Contact">
                     <p class="pb-1 d-block small-text-header">Contact</p>
-                    <p class="small-text">Manager: Asbjørn Helgeland</p>
+                    <p class="small-text mb-1">Manager: Asbjørn Helgeland</p>
                     <div class="flex-column d-flex">
-                        <button class="small-text btn btn-sm text-start p-0" @click="copyPhone" style="width: fit-content;"> 
+                        <button class="small-text btn btn-sm text-start p-0 mb-1" @click="copyPhone" style="width: fit-content;"> 
                             <i class="bi bi-telephone me-1 ms-1 c-default"></i><span class="me-1 c-default">+47 406 14 867</span>
                         </button>
-                        <button class="small-text btn btn-sm text-start p-0 mt-2" @click="copyEmail" style="width: fit-content;">
+                        <button class="small-text btn btn-sm text-start p-0" @click="copyEmail" style="width: fit-content;">
                             <i class="bi bi-mailbox me-1 ms-1 c-default"></i><span class="me-1 c-default">Asbjorn.helgeland@gmail.com</span>
                         </button>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-3 mb-3 mt-3" title="Support">
-                    <p class="d-block small-text-header">Support</p>
-                    <button class="btn btn-lg" @click="link(1)">
+                <div class="col-12 col-md-3 mb-3 mt-3" title="Links">
+                    <p class="d-block small-text-header">Links</p>
+                    <button class="btn btn-lg p-2" @click="link(1)">
                         <i class="bi bi-facebook c-default"></i>
                     </button>
-                    <button class="btn btn-lg" @click="link(2)">
+                    <button class="btn btn-lg p-2" @click="link(2)">
                         <i class="bi bi-instagram c-default"></i>
                     </button>
-                    <button class="btn btn-lg" @click="link(3)">
+                    <button class="btn btn-lg p-2" @click="link(3)">
                         <i class="bi bi-github c-default"></i>
                     </button>
                 </div>
@@ -92,6 +92,7 @@
 
     .small-text {
         font-size: 0.7rem;
+        width: fit-content;
     }
 
     .small-text-header {

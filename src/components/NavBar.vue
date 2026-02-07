@@ -5,6 +5,16 @@
                 <span class="c-default">Haugaland Party Band</span>
             </button>
         </div>
+        <div class="nav-item" title="Kalender" style="overflow: hidden;">
+            <button class="btn btn-sm fs-5 c-default" @click="goTo(4)">
+                <span class="c-default">Kalender</span>
+            </button>
+        </div>
+        <div class="nav-item" title="Kalender" style="overflow: hidden;">
+            <button class="btn btn-sm fs-5 c-default" @click="goTo(5)">
+                <span class="c-default">Booking</span>
+            </button>
+        </div>
         <div class="nav-item" title="Galleri" style="overflow: hidden;">
             <button class="btn btn-sm fs-5 c-default" @click="goTo(2)">
                 <span class="c-default">Galleri</span>
@@ -13,11 +23,6 @@
         <div class="nav-item" title="Anmeldelser" style="overflow: hidden;">
             <button class="btn btn-sm fs-5 c-default" @click="goTo(3)">
                 <span class="c-default">Anmeldelser</span>
-            </button>
-        </div>
-        <div class="nav-item" title="Kalender" style="overflow: hidden;">
-            <button class="btn btn-sm fs-5 c-default" @click="goTo(4)">
-                <span class="c-default">Kalender</span>
             </button>
         </div>
     </nav>
@@ -31,8 +36,8 @@
             case 1: window.location.href = `${base}`; break;
             case 2: window.location.href = `${base}galleri/`; break;
             case 3: window.location.href = `${base}anmeldelser/`; break;
-            // case 4: window.location.href = "/kontakt/"; break; // deprecated ??
             case 4: window.location.href = `${base}kalender/`; break;
+            case 5: window.location.href = "/booking/"; break; // deprecated ??
             default: return;
         }
     }
