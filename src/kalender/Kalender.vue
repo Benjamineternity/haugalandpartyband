@@ -1,12 +1,13 @@
 <template>
-    <!-- <ImageBackground /> -->
-    <div class="w-100 h-100 calContainer">
+    <!-- <ImageBackground /> --> <!-- Dont have the need for picture bg on every site -->
+    <div class="w-100 h-100 calContainer bg-default">
         <NavBar />
         <div class="container p-0 m-0 calContainer">
-            <div data-provide="calendar" ref="refCalendar" class="calendar container m-0 p-0 calContainer mt-2"></div> <!--:key="num1"-->
+            <div ref="refCalendar" class="calendar container m-0 p-0 calContainer mt-2"></div>
         </div>
         <Footer />
     </div>
+    <CalendarModal :events="calEvent" :day="toDay" />
 </template>
 
 <script setup>
@@ -18,17 +19,20 @@
     import ImageBackground from '/src/components/ImageBackground.vue';
     import Panel from '/src/components/Panel.vue';
     import Footer from '/src/components/Footer.vue';
+    import CalendarModal from '/src/components/CalendarModal.vue';
 
-    const coolCalendar = ref();
+    import { dsCalendar, currentYear, showCalendarEvent } from '/src/shared.ts';
+
+    const toDay = ref();
+    const calEvent = ref();
     const refCalendar = ref();
-    const currentYear = ref(new Date().getFullYear());
-        
+    const coolCalendar = ref();
+
     onMounted(() => {
         loadCalendar();
     });
 
     onBeforeUnmount(() => {
-        console.log('beforeonmuount')
         refCalendar.value.remove();
         refCalendar.value = null;
     });
@@ -36,25 +40,19 @@
     const loadCalendar = () => {
         coolCalendar.value = new Calendar(refCalendar.value ? refCalendar.value : '.calendar', {
             style: 'background',
-            minDate: new Date(),
-            maxDate: new Date(currentYear.value + 1, 0, 0),
+            minDate: new Date(2020, 0, 1),
+            maxDate: new Date(currentYear.value + 10, 0, 0),
             clickDay: function(e) {
-                alert('Click on day ' + e.date.toString());
-                // Show Modal // 
+                if (e.events.length > 0) {
+                    showCalendarEvent.value = true;
+                    calEvent.value = e.events;
+                    toDay.value = e.date;
+                }
             },
-            dataSource: (period) => {
-                console.log(period.year);
-            },
-            dataSource: [
-                {
-                    id: 0,
-                    name: 'Sildajazz',
-                    location: 'Haugesund',
-                    startDate: new Date(currentYear.value, 6, 3),
-                    endDate: new Date(currentYear.value, 6, 10)
-                },
-            ],
+            dataSource: dsCalendar.value,
+            // setNumberMonthsDisplayed: 10,
         });
+        console.log(coolCalendar.value) // for more info of the calendar
     }
     
 
@@ -82,6 +80,11 @@
 
     .calContainer {
         background-color: #2e2d2d;
+    }
+
+    .custDiav {
+        z-index: 999;
+        position: absolute;
     }
 
 </style>
