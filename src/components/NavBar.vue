@@ -37,7 +37,7 @@
             case 2: window.location.href = `${base}galleri/`; break;
             case 3: window.location.href = `${base}anmeldelser/`; break;
             case 4: window.location.href = `${base}kalender/`; break;
-            case 5: window.location.href = "/booking/"; break; // deprecated ??
+            case 5: window.location.href = `${base}booking/`; break;
             default: return;
         }
     }

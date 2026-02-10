@@ -1,9 +1,8 @@
 <template>
-    <!-- <ImageBackground /> --> <!-- Dont have the need for picture bg on every site -->
-    <div class="w-100 h-100 calContainer bg-default">
+    <div class="w-100 h-100 calContainer">
         <NavBar />
-        <div class="container p-0 m-0 calContainer">
-            <div ref="refCalendar" class="calendar container m-0 p-0 calContainer mt-2"></div>
+        <div class="calContainer container mt-5">
+            <div ref="refCalendar" class="calendar m-0 p-0 calContainer mt-2"></div>
         </div>
         <Footer />
     </div>
@@ -68,14 +67,12 @@
     }
 
     .calendar {
-        left: 5%;
-        right: 5%;
-        position: absolute;
-        width: 90%;
-        height: 70%;
+        margin: 25px;
+        position: relative;
+        width: 100%;
         background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
         color: rgb(242, 239, 234);
-        z-index: 999;
+        overflow: hidden;
     }
 
     .calContainer {
