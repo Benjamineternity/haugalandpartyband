@@ -10,6 +10,11 @@
 
 <script setup lang="ts">
     import { ref, onMounted, onBeforeUnmount } from 'vue';
+    
+    const apiUrl = import.meta.env.VITE_API_URL;
+
+    // await fetch(`${apiUrl}/GetSomething`)
+
 
     const images = import.meta.glob<string>(
         '/src/images/*.jpg',
