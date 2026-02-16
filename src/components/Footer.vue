@@ -36,14 +36,20 @@
                     <button class="btn btn-lg p-2" @click="link(3)">
                         <i class="bi bi-github c-default"></i>
                     </button>
+                    <button class="btn btn-sm p-0 m-0 btn-link text-decoration-none hover-text-decoration-underline" @click="link(4)">
+                        <p class="mb-0">Terms & Conditions</p>
+                    </button>
+                    <button class="btn btn-sm p-0 m-0 btn-link text-decoration-none hover-text-decoration-underline" @click="link(5)">
+                        <p class="mb-0">Privacy Policy</p>
+                    </button>
                 </div>
 
                 <div class="col-12 col-md-3 mb-3 mt-3" title="HPB">
                     <p class="d-block small-text-header">HPB</p>
                     <p class="small-text mb-1">Developer: Benjamin Hole</p>
                     <p class="small-text mb-1">All Rights Reserved</p>
-                    <a class="small-text c-default text-decoration-none hover-text-decoration-underline" href="https://HaugalandPartyBand.no">
-                        <p class="mb-0">©HaugalandPartyBand.no 2026</p>
+                    <a class="small-text link text-decoration-none hover-text-decoration-underline" href="https://HaugalandPartyBand.no">
+                        <p class="mb-1">©HaugalandPartyBand.no 2026</p>
                     </a>
                 </div>
             </div>
@@ -52,6 +58,8 @@
 </template>
 
 <script setup lang="ts">
+    const base = import.meta.env.BASE_URL;
+
     const copyPhone = (e: MouseEvent) => {;
         const target = e.target as HTMLElement;
         const innerText : string = target.innerText;
@@ -66,12 +74,16 @@
     }
 
     const link = (index: Number) => {
-        if (index === 1)
+        if (index === 1) {
             window.open('https://www.facebook.com/HaugalandPartyband');
-        else if (index === 2)
+        } else if (index === 2) {
             window.open('https://www.instagram.com/haugalandpartyband/');
-        else if (index === 3) {
+        } else if (index === 3) {
             window.open('https://github.com/Benjamineternity/haugalandpartyband');
+        } else if (index === 4) {
+            window.location.href = `${base}terms/`
+        } else if (index === 5) {
+            window.location.href = `${base}privacypolicy/`
         }
     }
 
