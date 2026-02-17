@@ -12,6 +12,9 @@ export default defineConfig({
         galleri: resolve(__dirname, 'galleri/index.html'),
         kalender: resolve(__dirname, 'kalender/index.html'),
         anmeldelser: resolve(__dirname, 'anmeldelser/index.html'),
+        booking: resolve(__dirname, 'booking/index.html'),
+        privacypolicy: resolve(__dirname, 'privacypolicy/index.html'),
+        terms: resolve(__dirname, 'terms/index.html'),
       }
     }
   }
