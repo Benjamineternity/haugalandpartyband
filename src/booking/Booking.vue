@@ -1,26 +1,33 @@
 <template>
-    <!-- <NavBar /> -->
-    <!-- <ImageBackground /> -->
-    <!-- <div class="bg-default">
-        <Panel :text="'Booking'"> -->
-            <p class="text-center">Book oss i dag!</p>
-            <h3 class="text-center">BETA</h3>
-            <h6 class="text-center">For questions or features send a mail to Benjamin.hole@outlook.com please</h6><br>
-            <div class="container" style="height:500px; width:100%;">
-                {{ albums }}
-            </div>
-        <!-- </Panel>
-    </div> -->
-    <!-- <Footer /> -->
+    <!-- API Test -->
+    <p class="text-center">Book oss i dag!</p>
+    <h3 class="text-center">BETA</h3>
+    <h6 class="text-center">For questions or features send a mail to me please</h6><br>
+    <div class="container" style="height:500px; width:100%;">
+        {{ albums }}
+    </div> 
+
+
+    <NavBar />
+    <!-- <ImageBackground />
+        <button class="btn btn-sm text-primary" @click="showBooking = true">
+            Book oss!
+        </button>
+        <BookingModal />
+    <Footer /> -->
 </template>
 
 <script setup lang="ts">
     import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
-    // import NavBar from '/src/components/NavBar.vue';
-    // import ImageBackground from '/src/components/ImageBackground.vue';
-    // import Panel from '/src/components/Panel.vue';
-    // import Footer from '/src/components/Footer.vue';
+    
+    import NavBar from '/src/components/NavBar.vue';
+    import ImageBackground from '/src/components/ImageBackground.vue';
+    import Panel from '/src/components/Panel.vue';
+    import Footer from '/src/components/Footer.vue';
+    import BookingModal from '/src/components/BookingModal.vue';
 
+    import { dsCalendar, showBooking } from '../shared'; // use relative path to resolve module
+    
     const albums = ref<string | null>(null);
     const STORAGE_KEY = 'fb_albums_cache';
     const CACHE_DURATION = 10 * 60 * 1000;
@@ -60,7 +67,7 @@
             localStorage.setItem( STORAGE_KEY, JSON.stringify(cacheObject) );
 
         } catch (error) {
-            console.log('API failed, using cached data if available')
+            console.log('API failed, using cached data if available', albums.value);
         }
     })
 

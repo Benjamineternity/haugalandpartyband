@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar gap-3 nav-default justify-content-start fs-5 c-default">
-        <div class="nav-item" style="margin-left: 10%; overflow: hidden;" title="Haugaland Party Band">
+    <nav class="nav-default navbar fs-5 c-default d-none d-md-flex">
+        <div class="nav-item ms-2" title="Haugaland Party Band">
             <button class="btn btn-sm fs-5" @click="goTo(1)">
                 <span class="c-default">Haugaland Party Band</span>
             </button>
@@ -10,11 +10,11 @@
                 <span class="c-default">Kalender</span>
             </button>
         </div>
-        <div class="nav-item" title="Kalender" style="overflow: hidden;">
+        <!-- <div class="nav-item" title="Kalender" style="overflow: hidden;">
             <button class="btn btn-sm fs-5 c-default" @click="goTo(5)">
                 <span class="c-default">Booking</span>
             </button>
-        </div>
+        </div> -->
         <div class="nav-item" title="Galleri" style="overflow: hidden;">
             <button class="btn btn-sm fs-5 c-default" @click="goTo(2)">
                 <span class="c-default">Galleri</span>
@@ -24,6 +24,24 @@
             <button class="btn btn-sm fs-5 c-default" @click="goTo(3)">
                 <span class="c-default">Anmeldelser</span>
             </button>
+        </div>
+    </nav>
+    <nav class="nav-default navbar fs-5 c-default d-flex d-md-none">
+        <div class="nav-item ms-2" title="Haugaland Party Band">
+            <button class="btn btn-sm fs-5" @click="goTo(1)">
+                <span class="c-default">Haugaland Party Band</span>
+            </button>
+        </div>
+        <div class="nav-item dropdown">
+            <button class="btn c-default dropdown-toggle" data-bs-toggle="dropdown">
+                <!-- <i class="bi bi-caret-down-fill ms-1"></i> -->
+                <span class="navbar-toggler-icon c-default"></span>
+            </button>
+            <div class="dropdown-menu bg-default">
+                <a class="dropdown-item c-default bg-default" style="cursor:pointer" href="/kalender/">Kalender</a>
+                <a class="dropdown-item c-default bg-default" style="cursor:pointer" href="/galleri/">Galleri</a>
+                <a class="dropdown-item c-default bg-default" style="cursor:pointer" href="/anmeldelser/">Anmeldelser</a>
+            </div>
         </div>
     </nav>
 </template>
@@ -46,29 +64,21 @@
 
 <style scoped>
     .nav-default {
-        overflow: hidden;
+        /* overflow: hidden; */
         height: 7%;
         --bs-bg-opacity: 0.5;
         background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
         z-index: 999;
+        justify-content: start;
+        gap: 3rem;
     }
 
     .c-default {
         color: rgb(242, 239, 234);
     }
 
-    @media screen and (max-width: 800px) {
-        .nav-default {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .nav-item {
-            max-width: 25%;
-            padding: 0;
-        }
+    .bg-default {
+        background-color: rgba(22, 24, 31);
     }
 
 </style>
