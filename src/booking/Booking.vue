@@ -1,14 +1,16 @@
 <template>
-    <!-- API Test -->
-    <p class="text-center">Book oss i dag!</p>
-    <h3 class="text-center">BETA</h3>
-    <h6 class="text-center">For questions or features send a mail to me please</h6><br>
-    <div class="container" style="height:500px; width:100%;">
-        {{ albums }}
-    </div> 
-
-
     <NavBar />
+    <Panel>
+    <!-- API Test -->
+        <p class="text-center">Book oss i dag!</p>
+        <h3 class="text-center">BETA</h3>
+        <h6 class="text-center">For questions or features send a mail to me please</h6><br>
+        <div class="container" style="height:500px; width:100%;">
+            {{ albums }}
+        </div> 
+    </Panel>
+    <Footer />
+
     <!-- <ImageBackground />
         <button class="btn btn-sm text-primary" @click="showBooking = true">
             Book oss!

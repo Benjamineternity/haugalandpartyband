@@ -1,12 +1,31 @@
 <template>
-    <div class="c-default panel-default bg-default" style="padding: 1rem" :title="props.text">
-        <slot />
+    <div class="page-container">
+        <div class="content">
+            <div class="c-default panel-default" :title="props.text">
+                <div class="container fullContent">
+                    <div id="firstSlot" class="gap-1 container">
+                        <div class="container fs-4 fw-bold text-center">
+                            <slot name="header1"></slot>
+                        </div>
+                        <div class="container text-wrap text-break text-center">
+                            <slot name="content1"></slot>
+                        </div>
+                    </div>
+                </div>
+                <!-- <slot name="slot2"></slot>
+                <slot name="slot3"></slot> -->
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
     const props = defineProps({
         text: {
+            type: String,
+            default: '',
+        },
+        title: {
             type: String,
             default: '',
         }
@@ -18,17 +37,20 @@
 
     .panel-default {
         width: 50%;
-        left: 25%;
-        right: 25%;
+        margin-left: 25%;
+        margin-right: 25%;
         height: fit-content;
         --bs-bg-opacity: 0.3;
-        background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
+        /* Removed bg to have it as a placeholder thing pn empty, might add this to another component to exentuate text */
+        /* background-color: rgba(22, 24, 31, var(--bs-bg-opacity)); */ 
         z-index: 999;
         padding: 0;
+        height:100vh;
+        padding: 1rem;
     }
-    
-    .bg-default {
-        background-color: rgba(22, 24, 31);
+
+    .fullContent {
+        margin-top: 20%;
     }
 
     .c-default {

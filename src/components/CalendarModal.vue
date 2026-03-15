@@ -1,5 +1,5 @@
 <template>
-    <dialog v-if="showCalendarEvent"  ref="customDialog" open @keypress="keyPressFunc" class="customDialog"> <!--v-show="showCalendarEvent" draggable="true"-->
+    <dialog v-if="showCalendarEvent" backdrop ref="customDialog" open @keypress="keyPressFunc" class="customDialog" draggable="true">
         <div class="card-bg">
             <h5 class="ms-2 mt-3">{{ props.events.length > 1 ? 'Arrangementer' : 'Arrangement' }}: {{ formatDate(props.day) }}</h5>
         </div>
@@ -129,15 +129,6 @@
         border: 1px solid rgb(13,110,253);
         border-radius: 4px;
     }
-
-    /* .c-modal-header {
-        width: fit-content;
-        height: 10%;
-        border-bottom: 1px solid rgb(0, 0, 0);
-        margin-top: 1%;
-        margin-left: 2%;
-        font-size: 1.2rem;
-    } */
 
     .modal-footer {
         height: 'fit-content';
