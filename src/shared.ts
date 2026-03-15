@@ -1,16 +1,30 @@
 import { ref } from 'vue';
 
+const showBooking = ref(false);
 const showCalendarEvent = ref(false);
 const currentYear = ref(new Date().getFullYear());
+const currentDate = ref(new Date());
+const oneYearFromNow = ref(new Date(currentYear.value + 1, new Date().getMonth(), new Date().getDay()))
 
 type calendarItem = {
     id: number,
     name: string,
     location: string,
     startDate: Date,
-    endDate: Date,
-    color: string,
-    link: string,
+    endDate?: Date,
+    color?: string,
+    link?: string,
+    booking_ID?: number | null,
+}
+
+type bookingItem = {
+    id: number,
+    name: string,
+    phone: string,
+    location: string,
+    calendar_ID?: number,
+    type: string,
+    email: string,
 }
 
 const dsCalendar = ref<calendarItem[]>([
@@ -25,8 +39,8 @@ const dsCalendar = ref<calendarItem[]>([
     },
     {
         id: 1,
-        name: 'Sildajazz',
-        location: 'Haugesund',
+        name: 'Sveio Festivalen',
+        location: 'Sveio',
         startDate: new Date(2026, 7, 12),
         endDate: new Date(2026, 7, 13),
         color: '#0e0769ff',
@@ -43,6 +57,14 @@ const dsCalendar = ref<calendarItem[]>([
     }
 ]);
 
+// const dsBookings = ref<bookingItem>([
+    // id: number,
+    // name: string,
+    // phone: string,
+    // location: string,
+    // calendar_ID?: number,
+    // type: string,
+    // email: string,
+// ]);
 
-
-export { dsCalendar, currentYear,showCalendarEvent }
+export { dsCalendar, currentYear, showCalendarEvent, showBooking, oneYearFromNow, currentDate }

@@ -15,7 +15,7 @@
                 </button>
                 <div v-if="props.events.length > 1" class="dropdown extra-border">
                     <button class="btn btn-sm c-default dropdown-toggle" data-bs-toggle="dropdown">
-                        Gå til arrangementene
+                        {{ props.events.length > 1 ? 'Gå til arrangementene' : 'Gå til arrangementet'}} <i class="bi bi-arrow-right ms-1"></i>
                     </button>
                     <div class="dropdown-menu bg-default">
                         <a v-for="event in props.events" @click="gotoLinks(event.id)" style="cursor: pointer" class="dropdown-item c-default bg-default">{{ event.name }}</a>

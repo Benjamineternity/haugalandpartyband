@@ -7,6 +7,7 @@
         <Footer />
     </div>
     <CalendarModal :events="calEvent" :day="toDay" />
+    <BookingModal :bookingDate="bookingDate" />
 </template>
 
 <script setup>
@@ -19,13 +20,15 @@
     import Panel from '/src/components/Panel.vue';
     import Footer from '/src/components/Footer.vue';
     import CalendarModal from '/src/components/CalendarModal.vue';
+    import BookingModal from '/src/components/BookingModal.vue';
 
-    import { dsCalendar, currentYear, showCalendarEvent } from '/src/shared.ts';
+    import { dsCalendar, currentYear, showCalendarEvent, showBooking } from '/src/shared.ts';
 
     const toDay = ref();
     const calEvent = ref();
     const refCalendar = ref();
     const coolCalendar = ref();
+    const bookingDate = ref();
 
     onMounted(() => {
         loadCalendar();
@@ -46,14 +49,16 @@
                     showCalendarEvent.value = true;
                     calEvent.value = e.events;
                     toDay.value = e.date;
+                } else if (e.events.length === 0) {
+                    showBooking.value = true;
+                    bookingDate.value = e.date;
                 }
             },
             dataSource: dsCalendar.value,
-            // setNumberMonthsDisplayed: 10,
+            // setNumberMonthsDisplayed: 10, // For mobile view later
         });
-        console.log(coolCalendar.value) // for more info of the calendar
+        // console.log(coolCalendar.value) // for more info of the calendar
     }
-    
 
 </script>
 
