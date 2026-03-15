@@ -1,11 +1,10 @@
 <template>
-    <div class="w-100 h-100 calContainer">
-        <NavBar />
-        <div class="calContainer container mt-5">
-            <div ref="refCalendar" class="calendar m-0 p-0 calContainer mt-2"></div>
-        </div>
-        <Footer />
+    <ImageBackground bg="empty" />
+    <NavBar />
+    <div class="customContainer">
+        <div ref="refCalendar" class="calendar calContainer"></div>
     </div>
+    <Footer />
     <CalendarModal :events="calEvent" :day="toDay" />
     <BookingModal :bookingDate="bookingDate" />
 </template>
@@ -29,6 +28,7 @@
     const refCalendar = ref();
     const coolCalendar = ref();
     const bookingDate = ref();
+    const isMobile = ref(window.matchMedia("max-width <= 768px").matches);
 
     onMounted(() => {
         loadCalendar();
@@ -55,7 +55,7 @@
                 }
             },
             dataSource: dsCalendar.value,
-            // setNumberMonthsDisplayed: 10, // For mobile view later
+            setNumberMonthsDisplayed: isMobile.value ? 12 : 6,
         });
         // console.log(coolCalendar.value) // for more info of the calendar
     }
@@ -71,22 +71,27 @@
         color: rgb(242, 239, 234);
     }
 
-    .calendar {
-        margin: 25px;
-        position: relative;
+    .customContainer {
         width: 100%;
+        height: 100vh;
+    }
+
+    .calendar {
+        /* margin-top: 7%; */
+        margin-bottom: 5%;
+        margin-left: 10%;
+        margin-right: 10%;
+        position: absolute;
         background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
         color: rgb(242, 239, 234);
-        overflow: hidden;
+        max-height: 80%;
+        min-height: 50%;
+        top: 10%;
+        overflow-y: auto;
     }
 
     .calContainer {
-        background-color: #2e2d2d;
-    }
-
-    .custDiav {
-        z-index: 999;
-        position: absolute;
+        background-color: rgb(46, 45, 45);
     }
 
 </style>

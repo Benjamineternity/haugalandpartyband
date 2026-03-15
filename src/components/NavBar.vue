@@ -1,6 +1,6 @@
 <template>
-    <nav class="nav-default navbar fs-5 c-default d-none d-md-flex">
-        <div class="nav-item ms-2" title="Haugaland Party Band">
+    <nav class="nav-default navbar fs-5 c-default d-none d-md-flex justify-content-start" style="position:absolute;">
+        <div class="nav-item ms-2" title="Haugaland Party Band" style="margin-left:10% !important;">
             <button class="btn btn-sm fs-5" @click="goTo(1)">
                 <span class="c-default">Haugaland Party Band</span>
             </button>
@@ -10,11 +10,6 @@
                 <span class="c-default">Kalender</span>
             </button>
         </div>
-        <!-- <div class="nav-item" title="Kalender" style="overflow: hidden;">
-            <button class="btn btn-sm fs-5 c-default" @click="goTo(5)">
-                <span class="c-default">Booking</span>
-            </button>
-        </div> -->
         <div class="nav-item" title="Galleri" style="overflow: hidden;">
             <button class="btn btn-sm fs-5 c-default" @click="goTo(2)">
                 <span class="c-default">Galleri</span>
@@ -26,21 +21,20 @@
             </button>
         </div>
     </nav>
-    <nav class="nav-default navbar fs-5 c-default d-flex d-md-none">
+    <nav class="nav-default navbar fs-5 c-default d-flex d-md-none position-absolute">
         <div class="nav-item ms-2" title="Haugaland Party Band">
             <button class="btn btn-sm fs-5" @click="goTo(1)">
                 <span class="c-default">Haugaland Party Band</span>
             </button>
         </div>
         <div class="nav-item dropdown">
-            <button class="btn c-default dropdown-toggle" data-bs-toggle="dropdown">
-                <!-- <i class="bi bi-caret-down-fill ms-1"></i> -->
-                <span class="navbar-toggler-icon c-default"></span>
+            <button class="btn c-default " data-bs-toggle="dropdown">
+                <i class="bi bi-list fs-3"></i>
             </button>
-            <div class="dropdown-menu bg-default">
-                <a class="dropdown-item c-default bg-default" style="cursor:pointer" href="/kalender/">Kalender</a>
-                <a class="dropdown-item c-default bg-default" style="cursor:pointer" href="/galleri/">Galleri</a>
-                <a class="dropdown-item c-default bg-default" style="cursor:pointer" href="/anmeldelser/">Anmeldelser</a>
+            <div class="dropdown-menu dropdown-menu-end bg-default">
+                <a class="dropdown-item c-default bg-default" style="cursor:pointer; width:fit-content" href="/kalender/">Kalender</a>
+                <a class="dropdown-item c-default bg-default" style="cursor:pointer; width:fit-content" href="/galleri/">Galleri</a>
+                <a class="dropdown-item c-default bg-default" style="cursor:pointer; width:fit-content" href="/anmeldelser/">Anmeldelser</a>
             </div>
         </div>
     </nav>
@@ -64,13 +58,13 @@
 
 <style scoped>
     .nav-default {
-        /* overflow: hidden; */
         height: 7%;
+        width: 100%;
         --bs-bg-opacity: 0.5;
         background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
         z-index: 999;
-        justify-content: start;
         gap: 3rem;
+        position: absolute !important;
     }
 
     .c-default {

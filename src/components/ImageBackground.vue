@@ -1,20 +1,27 @@
 <template>
-    <div class="bg-images">
+    <div class="bg-images" v-if="props.bg != 'empty'">
         <img v-for="(img, idx) in twoImages" :key="idx"
             :src="img.source" loading="eager" class="image" :class="{ active: img.active }" />
         <div class="me-auto me-2" style="position:absolute;bottom:0;right:5px;">
             <p class="pb-0 mb-2 c-default" style="font-size:6px">Bilder av: Leif Hole</p>
         </div>
     </div>
+    <div v-else class="bg-images">
+        <div class="image"></div>
+    </div>
 </template>
 
 <script setup lang="ts">
     import { ref, onMounted, onBeforeUnmount } from 'vue';
     
-    const apiUrl = import.meta.env.VITE_API_URL;
+    // const apiUrl = import.meta.env.VITE_API_URL;
 
-    // await fetch(`${apiUrl}/GetSomething`)
-
+    const props = defineProps({
+        bg: {
+            type: String,
+            default: 'default',
+        }
+    });
 
     const images = import.meta.glob<string>(
         '/src/images/*.jpg',
@@ -84,6 +91,7 @@
         overflow: hidden;
         pointer-events: none;
         background-color: rgba(22, 24, 31);
+        z-index: -1;
     }
 
     .image {
