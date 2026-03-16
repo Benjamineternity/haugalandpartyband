@@ -36,11 +36,12 @@
 <style scoped>
 
     .panel-default {
-        width: 50%;
-        margin-left: 25%;
-        margin-right: 25%;
+        align-items: center;
+        width: 40%;
+        margin-left: 30%;
+        margin-right: 30%;
         height: fit-content;
-        --bs-bg-opacity: 0.3;
+        /* --bs-bg-opacity: 0.3; */
         /* Removed bg to have it as a placeholder thing pn empty, might add this to another component to exentuate text */
         /* background-color: rgba(22, 24, 31, var(--bs-bg-opacity)); */ 
         z-index: 999;
@@ -51,6 +52,10 @@
 
     .fullContent {
         margin-top: 20%;
+    }
+
+    .content {
+        width: 100%;
     }
 
     .c-default {

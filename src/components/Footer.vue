@@ -35,6 +35,9 @@
                 <button class="btn btn-lg p-2" @click="link(3)">
                     <i class="bi bi-github c-default"></i>
                 </button>
+                <button class="btn btn-lg p-2" @click="link(6)">
+                    <i class="bi bi-spotify c-default"></i>
+                </button>
                 <br>
                 <button class="btn btn-sm p-0 m-0 btn-link text-decoration-none hover-text-decoration-underline" @click="link(4)">
                     <p class="mb-0">Terms & Conditions</p>
@@ -81,9 +84,11 @@
         } else if (index === 3) {
             window.open('https://github.com/Benjamineternity/haugalandpartyband');
         } else if (index === 4) {
-            window.location.href = `${base}terms/`
+            window.location.href = `${base}terms/`;
         } else if (index === 5) {
-            window.location.href = `${base}privacypolicy/`
+            window.location.href = `${base}privacypolicy/`;
+        } else if (index === 6) {
+            window.open('https://open.spotify.com/artist/5XtSUcaEZjOY67LI05oiPY');
         }
     }
 

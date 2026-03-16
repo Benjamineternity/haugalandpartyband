@@ -54,10 +54,10 @@
             </div>
         </div>
         <div class="modal-footer mt-2">
-            <button @click="reset" class="btn btn-sm btn-secondary c-default me-2 mt-2">
+            <button @click="reset" class="btn btn-sm btn-secondary c-default me-2 mt-2 mb-1">
                 Lukk
             </button>
-            <button class="btn btn-sm btn-primary mt-2" @click="submitBooking"> <!--text-primary-->
+            <button class="btn btn-sm btn-primary mt-2 me-2 mb-1" @click="submitBooking"> <!--text-primary-->
                 Send booking
             </button>
         </div>
@@ -122,6 +122,8 @@
         const isMobile = ref(window.matchMedia("max-width <= 768px").matches);
 
         reset();
+
+        alert("booking kommer senere")
     }
 
     const setDate = () => {
