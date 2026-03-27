@@ -1,8 +1,11 @@
 <template>
     <nav class="nav-default navbar fs-5 c-default d-none d-md-flex justify-content-start" style="position:absolute;">
         <div class="nav-item ms-2" title="Haugaland Party Band" style="margin-left:10% !important;">
-            <button class="btn btn-sm fs-5" @click="goTo(1)">
+            <button class="btn btn-sm fs-5 justify-content-center" @click="goTo(1)">
                 <span class="c-default">Haugaland Party Band</span>
+                <!-- <img style="bottom:10px" src="/src/images/logoNavbar.png" width="50" height="50" /> 
+                    fix later, logo needs to be white
+                -->
             </button>
         </div>
         <div class="nav-item" title="Kalender" style="overflow: hidden;">

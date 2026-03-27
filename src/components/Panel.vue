@@ -34,7 +34,7 @@
     });
 
     onMounted(() => {
-        atHome.value = window.location.hostname === 'haugalandpartyband.no' || window.location.hostname === 'www.haugalandpartyband.no' || window.location.hostname === 'localhost';
+        atHome.value = window.location.href === 'https://haugalandpartyband.no/' || window.location.href === 'https://haugalandpartyband.no' || window.location.href === 'http://localhost:5173/';
     });
 </script>
 
@@ -55,7 +55,7 @@
     }
 
     .fullContent {
-        margin-top: 20%;
+        margin-top: 15%;
     }
 
     .content {
