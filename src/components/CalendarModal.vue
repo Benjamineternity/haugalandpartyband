@@ -6,7 +6,8 @@
         <div class="modal-body ms-3" v-for="event in props.events" :key="event.id">
             <p class="mb-1 mt-2"><i class="bi bi-bell me-1"></i>{{ event.name }}</p>
             <p class="mb-1"><i class="bi bi-geo-alt me-1"></i>{{ event.location }}</p>
-            <p class="mb-1"><i class="bi bi-calendar-check me-1"></i>{{ formatDate(event.startDate) }} - {{ formatDate(event.endDate) }}</p>
+            <p v-if="formatDate(event.startDate) !== formatDate(event.endDate)" class="mb-1"><i class="bi bi-calendar-check me-1"></i>{{ formatDate(event.startDate) }} - {{ formatDate(event.endDate) }}</p>
+            <p v-if="formatDate(event.startDate) === formatDate(event.endDate)" class="mb-1"><i class="bi bi-calendar-check me-1"></i>{{ formatDate(event.startDate) }}</p>
         </div>
         <div class="modal-footer mt-2">
             <div class="mt-2 d-flex">
