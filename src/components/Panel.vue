@@ -1,9 +1,9 @@
 <template>
     <div class="page-container">
         <div class="content">
-            <div class="c-default panel-default" :title="props.text">
-                <div class="container fullContent">
-                    <div id="firstSlot" class="gap-1 container">
+            <div class="c-default panel-default" :title="props.text" :style="atHome ? 'height: 80vh;' : ''">
+                <div class="container fullContent gap-3">
+                    <div class="gap-2 container">
                         <div class="container fs-4 fw-bold text-center">
                             <slot name="header1"></slot>
                         </div>
@@ -12,14 +12,16 @@
                         </div>
                     </div>
                 </div>
-                <!-- <slot name="slot2"></slot>
-                <slot name="slot3"></slot> -->
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+    import { ref, onMounted } from 'vue';
+    
+    const atHome = ref(true);
+
     const props = defineProps({
         text: {
             type: String,
@@ -31,10 +33,12 @@
         }
     });
 
+    onMounted(() => {
+        atHome.value = window.location.hostname === 'haugalandpartyband.no' || window.location.hostname === 'www.haugalandpartyband.no' || window.location.hostname === 'localhost';
+    });
 </script>
 
 <style scoped>
-
     .panel-default {
         align-items: center;
         width: 40%;
@@ -46,7 +50,7 @@
         /* background-color: rgba(22, 24, 31, var(--bs-bg-opacity)); */ 
         z-index: 999;
         padding: 0;
-        height:100vh;
+        height: 100vh;
         padding: 1rem;
     }
 
@@ -60,6 +64,11 @@
 
     .c-default {
         color: rgb(242, 239, 234);
+    }
+
+    .bg-default {
+        --bs-bg-opacity: 0.5;
+        background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
     }
 
 </style>
