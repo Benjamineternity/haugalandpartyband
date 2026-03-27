@@ -31,13 +31,13 @@ const dsCalendar = ref<calendarItem[]>([
     },
     {
         id: 1,
-        name: 'Sveio Festivalen',
-        location: 'Sveio',
+        name: '', // Sveio Festivalen
+        location: '', // Sveio
         startDate: new Date(2026, 7, 12),
         endDate: new Date(2026, 7, 12),
-        color: '#195939',
-        link: 'https://www.facebook.com/p/Sveio-Festivalen-61566542897666/',
-        private: false,
+        color: '#880808',
+        link: '', //'https://www.facebook.com/p/Sveio-Festivalen-61566542897666/',
+        private: true,
     },
     {
         id: 2,
