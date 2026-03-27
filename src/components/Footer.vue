@@ -105,17 +105,12 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        
         height: 300px;
-
         z-index: 1;
-
         display: flex;
         justify-content: center;
         align-items: center;
-
         color: white;
-
         background: rgb(28, 26, 22, 0.65);
         backdrop-filter: blur(10px);
     }
@@ -123,7 +118,6 @@
     .footer-inner {
         font-size: 24px;
     }
-
 
     .footer-default {
         --bs-bg-opacity: 0.5;

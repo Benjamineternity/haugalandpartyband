@@ -39,8 +39,6 @@
 
     .c-default {
         color: rgb(242, 239, 234);
-    }
-
-    
+    }    
 
 </style>
