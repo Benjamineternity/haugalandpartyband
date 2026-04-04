@@ -21,7 +21,7 @@
             </div>
 
             <div class="bandItem">
-                <p>Andreas Jøsendal Helgeland - Tangenter & Kor</p>
+                <p>Andreas Jøsendal Helgeland - Tangenter</p>
                 <div class="imgWrapper">
                     <img class="bandImage" src="/src/omoss/images/andreas.jpg" width="300" height="250" />
                 </div>
