@@ -124,4 +124,25 @@
         background-color: #FFFF00;
     }
 
+    @media screen and (max-width: 800px) {
+        img {
+            width: 230px;
+            height: 170;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        img {
+            width: 200px;
+            height: 150;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        img {
+            width: 150px;
+            height: 120;
+        }
+    }
+
 </style>
