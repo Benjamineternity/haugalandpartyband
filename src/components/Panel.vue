@@ -1,8 +1,8 @@
 <template>
-    <div class="page-container">
+    <div class="" style="height: fit-content;"> <!--page-container-->
         <div class="content">
             <div class="c-default panel-default" :title="props.text" :style="atHome ? 'height: 80vh;' : ''">
-                <div class="container fullContent gap-3">
+                <div class="container fullContent gap-3 justify-content-center">
                     <div class="gap-2 container">
                         <div class="container fs-4 fw-bold text-center">
                             <slot name="header1"></slot>
@@ -34,7 +34,7 @@
     });
 
     onMounted(() => {
-        atHome.value = window.location.href === 'https://haugalandpartyband.no/' || window.location.href === 'https://haugalandpartyband.no' || window.location.href === 'http://localhost:5173/';
+        atHome.value = window.location.href === 'https://haugalandpartyband.no/' || window.location.href === 'https://haugalandpartyband.no' || window.location.href === 'https://haugalandpartyband.no/hjem' || window.location.href === 'https://haugalandpartyband.no/hjem/' || window.location.href === 'http://localhost:5173/' || window.location.href === 'http://localhost:5173/hjem';
     });
 </script>
 
@@ -50,7 +50,7 @@
         /* background-color: rgba(22, 24, 31, var(--bs-bg-opacity)); */ 
         z-index: 999;
         padding: 0;
-        height: 100vh;
+        height: fit-content;
         padding: 1rem;
     }
 
@@ -69,6 +69,42 @@
     .bg-default {
         --bs-bg-opacity: 0.5;
         background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
+    }
+
+    @media screen and (max-width: 1000px) {
+        .panel-default {
+            width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .fullContent {
+            margin-top: 20%;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .panel-default {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .fullContent {
+            margin-top: 20%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .panel-default {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .fullContent {
+            margin-top: 30%;
+        }
     }
 
 </style>

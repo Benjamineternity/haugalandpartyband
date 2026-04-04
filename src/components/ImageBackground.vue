@@ -1,12 +1,16 @@
 <template>
-    <div class="bg-images" v-if="props.bg != 'empty'">
+    <div class="bg-images" v-if="!props.bg">
         <img v-for="(img, idx) in twoImages" :key="idx"
             :src="img.source" loading="eager" class="image" :class="{ active: img.active }" />
         <div class="me-auto me-2" style="position:absolute;bottom:0;right:5px;">
             <p class="pb-0 mb-2 c-default" style="font-size:6px">Bilder av: Leif Hole</p>
         </div>
     </div>
-    <div v-else class="bg-images">
+    <div v-else-if="props.bg === 'empty'" class="bg-images">
+        <div class="image"></div>
+    </div>
+
+    <div v-else-if="props.bg === 'empty2'" class="bg-images2">
         <div class="image"></div>
     </div>
 </template>
@@ -86,6 +90,15 @@
 
 <style scoped>
     .bg-images {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        background-color: rgba(22, 24, 31);
+        z-index: -1;
+    }
+
+    .bg-images2 {
         position: fixed;
         inset: 0;
         overflow: hidden;

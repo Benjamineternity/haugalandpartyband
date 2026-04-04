@@ -15,6 +15,7 @@ export default defineConfig({
         booking: resolve(__dirname, 'booking/index.html'),
         privacypolicy: resolve(__dirname, 'privacypolicy/index.html'),
         terms: resolve(__dirname, 'terms/index.html'),
+        omoss: resolve(__dirname, 'omoss/index.html'),
       }
     }
   }

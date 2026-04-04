@@ -31,8 +31,8 @@ const dsCalendar = ref<calendarItem[]>([
     },
     {
         id: 1,
-        name: 'private', // Sveio Festivalen
-        location: 'private', // Sveio
+        name: 'Privat', // Sveio Festivalen
+        location: 'Privat', // Sveio
         startDate: new Date(2026, 7, 12),
         endDate: new Date(2026, 7, 12),
         color: '#880808',
@@ -42,7 +42,7 @@ const dsCalendar = ref<calendarItem[]>([
     {
         id: 2,
         name: 'Mortholmen',
-        location: 'Mortholmen - Koppervik',
+        location: 'Koppervik',
         startDate: new Date(2026, 3, 4),
         endDate: new Date(2026, 3, 4),
         color: '#195939',
