@@ -2,9 +2,9 @@
     <NavBar />
     <ImageBackground />
     <Panel>
-        <template #header1>
+        <!-- <template #header1>
             <p>Anmeldelser</p>
-        </template>
+        </template> -->
         <template #content1>
             <p>Coming soon</p>
         </template>

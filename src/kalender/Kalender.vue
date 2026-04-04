@@ -1,14 +1,27 @@
 <template>
     <ImageBackground bg="empty" />
     <NavBar />
+    <div class="listContainer"> <!-- Events list -->
+        <div class="lists">
+            <h5 class="c-default funnyFont mb-3">Kommende arrangement</h5>
+            <div v-for="item in sortedEvents" class="c-default">
+                <div v-if="!item.private" class="listItems gap-2">
+                    <p style="width: 100px;" >{{ formatDate(item.startDate) }}</p> <p :href="item.link">{{ item.name }}</p> <p >-</p> <p :href="item.link">{{ item.location }}</p>
+                </div>
+                <div v-else class="listItems gap-2">
+                    <p style="width: 100px">{{ formatDate(item.startDate) }}</p> <p >Privat arrangement</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="customContainer">
         <div ref="refCalendar" class="calendar calContainer"></div>
 
         <div class="d-flex mt-3 gap-4 justify-content-center align-items-center">
             <p class="c-default ms-2"><i class="bi bi-circle-fill me-2" style="color: #195939"></i>Offentig arrangement</p>
-    
             <p class="c-default"><i class="bi bi-circle-fill me-2" style="color: #880808"></i>Privat arrangement</p>
-    
+            <!-- <p class="c-default"><i class="bi bi-circle-fill me-2" style="color: #f59e0b"></i>Under forhandling</p> -->
             <p class="c-default me-2"><i class="bi bi-circle-fill me-2" style="color: #2e2d2d"></i>Ledig</p>
         </div>
     </div>
@@ -37,6 +50,7 @@
     const coolCalendar = ref();
     const bookingDate = ref();
     const isMobile = ref(window.matchMedia("max-width <= 768px").matches);
+    const sortedEvents = dsCalendar.value.sort((a, b) => a.startDate - b.startDate);
 
     onMounted(() => {
         loadCalendar();
@@ -68,26 +82,63 @@
         // console.log(coolCalendar.value) // for more info of the calendar
     }
 
+    const formatDate = (date) => {
+        let temp = date.toLocaleDateString('nb-NO', {
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric'
+        }).replace('.', '');
+
+        return temp[0].toUpperCase() + temp.slice(1);
+    }
+
 </script>
 
 <style scoped>
     .bg-default {
-        background-color: rgb(28, 26, 22) ;
+        background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
+    }
+
+    .funnyFont {
+        font-family: 'Comic Sans MS';
     }
 
     .c-default {
         color: rgb(242, 239, 234);
     }
 
+    p {
+        margin: 0;
+        margin-bottom: 12px;
+        font: 'Archivo Narrow';
+        font-size: 16px;
+    }
+
+    .listContainer {
+        margin-left: 25%;
+        display: flex;
+    }
+
+    .lists {
+        margin-top: 7%;
+        background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
+        display: flex;
+        flex-direction: column;
+    }
+
+    .listItems {
+        align-items: start;
+        display: flex;
+    }
+
     .customContainer {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100vh;
     }
 
     .calendar {
-        margin-top: 7%;
+        margin-top: 3%;
         margin-left: 10%;
         margin-right: 10%;
         background-color: rgba(22, 24, 31, var(--bs-bg-opacity));
@@ -102,33 +153,45 @@
         background-color: rgb(46, 45, 45);
     }
 
-    @media screen and (max-width: 800px) {
-        .calendar {
+    @media screen and (max-width: 1100px) {
+        .lists {
+            margin-top: 10%;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .lists {
             margin-top: 12%;
         }
     }
 
-    @media screen and (max-width: 600px) {
-        .calendar {
+    @media screen and (max-width: 800px) {
+        .lists {
             margin-top: 15%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .lists {
+            margin-top: 20%;
         }
     }
     
     @media screen and (max-width: 400px) {
-        .calendar {
-            margin-top: 20%;
-        }
-    }
-
-    @media screen and (max-width: 300px) {
-        .calendar {
+        .lists {
             margin-top: 30%;
         }
     }
 
-    @media screen and (max-width: 150px) {
-        .calendar {
+    @media screen and (max-width: 300px) {
+        .lists {
             margin-top: 40%;
+        }
+    }
+
+    @media screen and (max-width: 150px) {
+        .lists {
+            margin-top: 50%;
         }
     }
 

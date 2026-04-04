@@ -1,42 +1,42 @@
 <template>
     <footer class="footer-default c-default">
-        <div class="row ms-5 me-3 footer-rows">
+        <div class="row ms-5 me-3 footer-rows justify-content-between">
 
-            <div class="col-12 col-md-3 mb-3 mt-3" title="Band Members">
+            <!-- <div class="col-12 col-md-3 mb-3 mt-3" title="Band Members">
                 <p class="pb-1 d-block small-text-header">Medlemmer</p>
-                <p class="small-text mb-1">Jon Oma Dahle 🎤</p>
-                <p class="small-text mb-1">Aage Halleland 🥁</p>
-                <p class="small-text mb-1">Mikkel Westye Magnerud 🎸</p>
-                <p class="small-text mb-1">Andreas Jøsendal Helgeland 🎹</p>
-                <p class="small-text mb-1">Benjamin Hole 🎸</p>
-            </div>
+                <p class="small-text mb-1">Jon Oma Dahle</p>
+                <p class="small-text mb-1">Aage Halleland</p>
+                <p class="small-text mb-1">Mikkel Westye Magnerud</p>
+                <p class="small-text mb-1">Andreas Jøsendal Helgeland</p>
+                <p class="small-text mb-1">Benjamin Hole</p>
+            </div> -->
 
-            <div class="col-12 col-md-3 mb-3 mt-3" title="Contact">
-                <p class="pb-1 d-block small-text-header">Contact</p>
+            <div class="col-12 col-md-3 mb-3 mt-3">
+                <p class="pb-1 d-block small-text-header funnyFont">Contact</p>
                 <p class="small-text mb-1">Manager: Asbjørn Helgeland</p>
                 <div class="flex-column d-flex">
-                    <button class="small-text btn btn-sm text-start p-0 mb-1" @click="copyPhone" style="width: fit-content;"> 
-                        <i class="bi bi-telephone me-1 ms-1 c-default"></i><span class="me-1 c-default">+47 406 14 867</span>
+                    <button class="small-text btn btn-sm text-start p-0 mb-1" @click="copyPhone" style="width: fit-content;" title="click to copy"> 
+                        <span class="me-1 c-default">+47 406 14 867</span>
                     </button>
-                    <button class="small-text btn btn-sm text-start p-0" @click="copyEmail" style="width: fit-content;">
-                        <i class="bi bi-mailbox me-1 ms-1 c-default"></i><span class="me-1 c-default">Asbjorn.helgeland@gmail.com</span>
+                    <button class="small-text btn btn-sm text-start p-0" @click="copyEmail" style="width: fit-content;" title="click to copy">
+                        <span class="me-1 c-default">Asbjorn.helgeland@gmail.com</span>
                     </button>
                 </div>
             </div>
 
-            <div class="col-12 col-md-3 mb-3 mt-3" title="Links">
-                <p class="d-block small-text-header">Links</p>
+            <div class="col-12 col-md-3 mb-3 mt-3">
+                <p class="d-block small-text-header funnyFont">Links</p>
                 <button class="btn btn-lg p-2" @click="link(1)">
                     <i class="bi bi-facebook c-default"></i>
                 </button>
                 <button class="btn btn-lg p-2" @click="link(2)">
                     <i class="bi bi-instagram c-default"></i>
                 </button>
-                <button class="btn btn-lg p-2" @click="link(3)">
-                    <i class="bi bi-github c-default"></i>
-                </button>
                 <button class="btn btn-lg p-2" @click="link(6)">
                     <i class="bi bi-spotify c-default"></i>
+                </button>
+                <button class="btn btn-lg p-2" @click="link(3)">
+                    <i class="bi bi-github c-default"></i>
                 </button>
                 <br>
                 <button class="btn btn-sm p-0 m-0 btn-link text-decoration-none hover-text-decoration-underline" @click="link(4)">
@@ -49,10 +49,10 @@
             </div>
 
             <div class="col-12 col-md-3 mb-3 mt-3" title="HPB">
-                <p class="d-block small-text-header">HPB</p>
+                <p class="d-block small-text-header funnyFont">HPB</p>
                 <p class="small-text mb-1">Developer: Benjamin Hole</p>
                 <p class="small-text mb-1">All Rights Reserved</p>
-                <a class="small-text link text-decoration-none hover-text-decoration-underline" href="https://HaugalandPartyBand.no">
+                <a class="small-text link text-decoration-none hover-text-decoration-underline" href="/hjem">
                     <p class="mb-1">©HaugalandPartyBand.no 2026</p>
                 </a>
             </div>
@@ -96,14 +96,10 @@
 
 <style scoped>
 
-    .page-container {
-        position: relative;
-    }
-
     .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
+        position: relative;
+        /* bottom: 0; */
+        /* left: 0; */
         width: 100%;
         height: 300px;
         z-index: 1;
@@ -113,6 +109,10 @@
         color: white;
         background: rgb(28, 26, 22, 0.65);
         backdrop-filter: blur(10px);
+    }
+
+    .funnyFont {
+        font-family: 'Comic Sans MS';
     }
 
     .footer-inner {
