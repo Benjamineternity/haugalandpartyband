@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-images" v-if="!props.bg">
+    <div class="bg-images" v-if="props.bg !== 'empty' && props.bg !== 'empty2'">
         <img v-for="(img, idx) in twoImages" :key="idx"
             :src="img.source" loading="eager" class="image" :class="{ active: img.active }" />
         <div class="me-auto me-2" style="position:absolute;bottom:0;right:5px;">
