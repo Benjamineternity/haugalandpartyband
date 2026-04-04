@@ -54,6 +54,7 @@
 
             <p>Benjamin Hole - Gitar</p>
             <img class="bandImage" src="/src/omoss/images/benjamin.jpg" width="300" height="250" /> -->
+            <p style="justify-content: start; align-items:start; left: 0; font-size:0.6rem;color:rgb(242, 239, 234)">Bilder av Jakob Tønnesen</p>
         </template>
     </Panel>
     <Footer />
