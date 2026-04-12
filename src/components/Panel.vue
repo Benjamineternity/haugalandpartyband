@@ -11,6 +11,9 @@
                             <slot name="content1"></slot>
                         </div>
                     </div>
+                    <div class="container">
+                        <slot name="details"></slot>
+                    </div>
                 </div>
             </div>
         </div>

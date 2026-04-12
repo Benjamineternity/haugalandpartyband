@@ -40,20 +40,6 @@
                     <img class="bandImage" src="/src/omoss/images/benjamin.jpg" width="300" height="250" />
                 </div>
             </div>
-            <!-- <p>Jon Oma Dahle - Vokal</p>
-            <img class="bandImage" src="/src/omoss/images/jon.jpg" width="300" height="250" /> -->
-
-            <!-- <p>Aage Halleland - Trommer & Kor</p>
-            <img class="bandImage" src="/src/omoss/images/aage.jpg" width="300" height="250" />
-
-            <p>Andreas Jøsendal Helgeland - Tangenter & Kor</p>
-            <img class="bandImage" src="/src/omoss/images/andreas.jpg" width="300" height="250" />
-            
-            <p>Mikkel Westye Magnerud - Bass</p>
-            <img class="bandImage" src="/src/omoss/images/mikkel.jpg" width="300" height="250" />
-
-            <p>Benjamin Hole - Gitar</p>
-            <img class="bandImage" src="/src/omoss/images/benjamin.jpg" width="300" height="250" /> -->
             <p style="justify-content: start; align-items:start; left: 0; font-size:0.6rem;color:rgb(242, 239, 234)">Bilder av Jakob Tønnesen</p>
         </template>
     </Panel>
@@ -68,11 +54,6 @@
     import Panel from '/src/components/Panel.vue';
     import Footer from '/src/components/Footer.vue';
 
-    // const images = import.meta.glob<string>(
-    //     '/src/images/*.jpg',
-    //     { eager: true, import: 'default' }
-    // );
-
 </script>
 
 <style scoped>
@@ -86,7 +67,6 @@
         display: inline-block;
     }
 
-    /* The gradient laye'r */
     .imgWrapper::after {
         content: "";
         position: absolute;
@@ -95,11 +75,11 @@
 
         background: radial-gradient(
             circle at center,
-            rgba(22, 24, 31, 1) 0%,     /* closest to image */
+            rgba(22, 24, 31, 1) 0%,
             rgba(22, 24, 31, 0.9) 30%,
-            rgba(35, 38, 50, 0.7) 55%,  /* transition tone */
+            rgba(35, 38, 50, 0.7) 55%,
             rgba(60, 64, 85, 0.5) 75%,
-            rgba(90, 95, 120, 0.3) 100% /* outer color */
+            rgba(90, 95, 120, 0.3) 100%
         );
 
         filter: blur(20px);
