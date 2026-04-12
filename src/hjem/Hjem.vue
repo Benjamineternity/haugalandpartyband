@@ -13,7 +13,7 @@
             </div>
         </template>
     </Panel>
-    <div class="partnerListContainer">
+    <!-- <div class="partnerListContainer">
         <div class="partnerlist" ref="partnerItem">
             <div class="c-default partnerItem" v-for="item in partnerList">
                 <p class="logo ms-2 me-2" style="font-size: 16px;">{{ item }}</p>
@@ -23,7 +23,7 @@
                 <p class="logo ms-2 me-2" style="font-size: 16px;">{{ item }}</p>
             </div>
         </div>
-    </div>
+    </div> -->
     <Footer />
 </template>
 
