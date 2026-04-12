@@ -18,6 +18,11 @@
                 <span class="c-default funnyFont">Bandet</span>
             </button>
         </div>
+        <!-- <div class="nav-item" title="Butikk">
+            <button class="btn btn-sm c-default" @click="goTo(6)">
+                <span class="c-default funnyFont">Butikk</span>
+            </button>
+        </div> -->
         <!-- <div class="nav-item" title="Galleri">
             <button class="btn btn-sm c-default" @click="goTo(2)">
                 <span class="c-default funnyFont">Galleri</span>
@@ -42,6 +47,7 @@
             <div class="dropdown-menu dropdown-menu-end bg-default">
                 <a class="dropdown-item funnyFont c-default bg-default" style="cursor:pointer; width:fit-content" href="/kalender/">Kalender</a>
                 <a class="dropdown-item funnyFont c-default bg-default" style="cursor:pointer; width:fit-content" href="/omoss/">Bandet</a>
+                <!-- <a class="dropdown-item funnyFont c-default bg-default" style="cursor:pointer; width:fit-content" href="/butikk/">Bandet</a> -->
                 <!-- <a class="dropdown-item funnyFont c-default bg-default" style="cursor:pointer; width:fit-content" href="/galleri/">Galleri</a>
                 <a class="dropdown-item funnyFont c-default bg-default" style="cursor:pointer; width:fit-content" href="/anmeldelser/">Anmeldelser</a> -->
             </div>
@@ -59,6 +65,7 @@
             case 3: window.location.href = `${base}anmeldelser/`; break;
             case 4: window.location.href = `${base}kalender/`; break;
             case 5: window.location.href = `${base}omoss/`; break;
+            case 6: window.location.href = `${base}butikk/`; break;
             default: return;
         }
     }
