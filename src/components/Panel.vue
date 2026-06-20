@@ -1,5 +1,5 @@
 <template>
-    <div class="" style="height: fit-content;"> <!--page-container-->
+    <div class="" style="height: fit-content;">
         <div class="content">
             <div class="c-default panel-default" :title="props.text" :style="atHome ? 'height: 80vh;' : ''">
                 <div class="container fullContent gap-3 justify-content-center">
@@ -24,6 +24,12 @@
     import { ref, onMounted } from 'vue';
     
     const atHome = ref(true);
+
+    defineSlots<{
+        header1: () => any
+        content1: () => any
+        details: () => any
+    }>();
 
     const props = defineProps({
         text: {
