@@ -17,8 +17,6 @@
 
 <script setup lang="ts">
     import { ref, onMounted, onBeforeUnmount } from 'vue';
-    
-    // const apiUrl = import.meta.env.VITE_API_URL;
 
     const props = defineProps({
         bg: {
