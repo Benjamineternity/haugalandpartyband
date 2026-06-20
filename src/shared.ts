@@ -23,21 +23,21 @@ const dsCalendar = ref<calendarItem[]>([
         id: 0,
         name: 'Sildajazz',
         location: 'Haugesund',
-        startDate: new Date(2026, 6, 3),    // YYYY M D // Month is indexed from 0
-        endDate: new Date(2026, 6, 3),      // YYYY M D // Month is indexed from 0
+        startDate: new Date(2026, 7, 8),    // YYYY M D // Month is indexed from 0
+        endDate: new Date(2026, 7, 8),      // YYYY M D // Month is indexed from 0
         color: '#195939',
         link: 'https://sildajazz.no/',
         private: false,
     },
     {
         id: 1,
-        name: 'Privat', // Sveio Festivalen
-        location: 'Privat', // Sveio
-        startDate: new Date(2026, 7, 12),
-        endDate: new Date(2026, 7, 12),
-        color: '#880808',
-        link: '', //'https://www.facebook.com/p/Sveio-Festivalen-61566542897666/',
-        private: true,
+        name: 'Fiskeridagene',
+        location: 'Åkra, Karmøy',
+        startDate: new Date(2026, 6, 31),
+        endDate: new Date(2026, 6, 31),
+        color: '#195939',
+        link: 'https://fiskeridagene.no/',
+        private: false,
     },
     {
         id: 2,
@@ -73,12 +73,32 @@ const dsCalendar = ref<calendarItem[]>([
         id: 5,
         name: 'Privat',
         location: 'Privat',
+        startDate: new Date(2026, 5, 27),
+        endDate: new Date(2026, 5, 27),
+        color: '#880808',
+        link: '',
+        private: true,
+    },
+    {
+        id: 6,
+        name: 'Privat',
+        location: 'Privat',
         startDate: new Date(2026, 7, 15),
         endDate: new Date(2026, 7, 15),
         color: '#880808',
         link: '',
         private: true,
-    }
+    },
+    {
+        id: 6,
+        name: 'Privat',
+        location: 'Privat',
+        startDate: new Date(2026, 10, 28),
+        endDate: new Date(2026, 10, 28),
+        color: '#880808',
+        link: '',
+        private: true,
+    },
 ]);
 
 export { dsCalendar, currentYear, showCalendarEvent, showBooking, oneYearFromNow, currentDate }

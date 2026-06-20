@@ -13,21 +13,19 @@
             </div>
         </template>
     </Panel>
-    <!-- <div class="partnerListContainer">
-        <div class="partnerlist" ref="partnerItem">
-            <div class="c-default partnerItem" v-for="item in partnerList">
-                <p class="logo ms-2 me-2" style="font-size: 16px;">{{ item }}</p>
-            </div>
 
-            <div class="c-default partnerItem" v-for="item in partnerList">
-                <p class="logo ms-2 me-2" style="font-size: 16px;">{{ item }}</p>
+    <div class="partnerListContainer" v-if="partnerList.length">
+        <div class="partnerlist" ref="partnerItem">
+            <div class="c-default partnerItem" v-for="(item, index) in partnerList" :key="index">
+                <img :src="item" class="logo" alt="Partner logo">
             </div>
         </div>
-    </div> -->
+    </div>
+
     <Footer />
 </template>
 
-<script setup>
+<script setup lang="ts">
     import { ref, onMounted } from 'vue';
 
     import NavBar from '/src/components/NavBar.vue';
@@ -35,18 +33,27 @@
     import Panel from '/src/components/Panel.vue';
     import Footer from '/src/components/Footer.vue';
 
-    const partnerList = ref(['Aibel', 'Hatteland', 'Røde Kors', 'Maritim Uke', 'Holdeplassen']); //, 'Sildajazz', 'Koppervikfestivalen', 'Sveiofestivalen', 'Konsertkompaniet']);
+    const images = import.meta.glob<string>(
+        './partnerImages/*.{png,jpg,jpeg,svg}',
+        { eager: true, import: 'default' }
+    );
+
+    const logos = Object.values(images);
+    const partnerList = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
     const partnerItem = ref();
 
     onMounted(() => {
-        setInterval(() => {
-            partnerItem.value.scrollLeft +=1;
-
-            if (partnerItem.value.scrollLeft >= partnerItem.value.scrollWidth - partnerItem.value.clientWidth) {
-                partnerItem.value.scrollLeft = 0;
-            }
-        }, 20)
+        if (partnerList.length > 0) {
+            setInterval(() => {
+                partnerItem.value.scrollLeft +=1;
+    
+                if (partnerItem.value.scrollLeft >= partnerItem.value.scrollWidth - partnerItem.value.clientWidth) {
+                    partnerItem.value.scrollLeft = 0;
+                }
+            }, 20)
+        }    
     });
+
 </script>
 
 <style scoped>
@@ -69,7 +76,6 @@
 
         overflow: hidden;
         position: relative;
-        /* display: inline-block; */
     }
 
     .partnerlist {
@@ -78,20 +84,16 @@
         margin-left: 10%;
         margin-right: 10%;
         display: flex;
-        /* border-top: 2px solid rgb(22, 24, 31);
-        border-bottom: 2px solid rgb(22, 24, 31); */
         justify-content: center;
         align-items: center;
         overflow: hidden;
         gap: 2rem;
-
         
         display: flex;
         animation: scroll 10s linear infinite;
     }
     
     .partnerListContainer::after {
-        content: "";
         position: absolute;
         inset: -40px;
         z-index: 1;
@@ -111,7 +113,7 @@
     }
 
     .partnerItem {
-        flex: 1 1 1;
+        flex: 0 0 auto;
         min-width: 120px;
         height: 100%;
         display: flex;
@@ -122,7 +124,16 @@
     .logo {
         padding: 0;
         margin-bottom: 0;
-        min-width: fit-content;
+
+        width: 200px;
+        height: 100px;
+
+        object-fit: contain;
+        object-position: center;
+
+        display: block;
+        user-select: none;
+        pointer-events: none;
     }
 
     .partnerItem p:first-of-type {
